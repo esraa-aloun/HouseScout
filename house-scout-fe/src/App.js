@@ -93,9 +93,9 @@ export default function App() {
           <Navbar.Brand href="/">HomeScout</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/signup">Signup</Nav.Link>
-            <Nav.Link href="/signin">Signin</Nav.Link>
-            <Nav.Link href="/logout" onClick={onLogoutHandler} >logout</Nav.Link>
+            {isAuth == false && <Nav.Link href="/signup">Signup</Nav.Link>}
+            {isAuth == false && <Nav.Link href="/signin">Signin</Nav.Link>}
+           
             {isAuth && user.user.role === "Proprietor" && (<Nav.Link href="/myProperties" >My Properties</Nav.Link>)}
             {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/addProperty" >Add Propert</Nav.Link>}
             {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/intrestedProperties" >Intrested Properties</Nav.Link>}
@@ -103,6 +103,7 @@ export default function App() {
             {isAuth && user.user.role === "Client" && <Nav.Link href="/apartments" >Apartments</Nav.Link>}
             {isAuth && user.user.role === "Client" && <Nav.Link href="/studios" >Studios</Nav.Link>}
             {isAuth && user.user.role === "Client" && (<Nav.Link href="/favouriteList" >Favourite List</Nav.Link>)}
+            {isAuth && <Nav.Link href="/logout" onClick={onLogoutHandler} >logout</Nav.Link>}
           </Nav>
         </Container>
       </Navbar>

@@ -15,3 +15,16 @@ exports.property_add_to_favourite_post = (req,res) =>{
 
 }
 
+exports.property_favourite_list_get = (req,res) =>{
+
+    FavouriteList.find({client_id: req.query.id})
+    .then(favList => {
+        
+        res.json({favList:favList})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+}
+

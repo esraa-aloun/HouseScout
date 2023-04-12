@@ -31,7 +31,7 @@ export default function Signin(props) {
 
             <Form.Group>
                 <Form.Label>Password</Form.Label>
-                <Form.Control name='password' onChange={changeHandler}/>                
+                <Form.Control type='password'name='password' onChange={changeHandler}/>                
             </Form.Group>
 
             <Button variant='primary' onClick={loginHandler} style={{ marginTop: '20px' }}>login</Button>

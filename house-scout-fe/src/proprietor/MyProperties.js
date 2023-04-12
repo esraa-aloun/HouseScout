@@ -19,17 +19,14 @@ export default function MyProperties() {
       if(user){
         setIsAuth(true)
         setUser(user)
-      
+        displayMyProperties(user.user.id)
+        
       }
       else if (!user){
         localStorage.removeItem("token")
         setIsAuth(false)
       }
     }
-   
-    if(user.user){
-    displayMyProperties(user.user.id)}
-
     }, [])
 
   const displayMyProperties = (id) =>{

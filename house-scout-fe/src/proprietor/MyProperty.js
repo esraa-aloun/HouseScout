@@ -16,6 +16,8 @@ export default function MyProperty(props) {
           {props.type}
         </Card.Text>
       {/* <Button variant="primary" onClick={()=>{props.addIntrestedProperty(props._id)}}>I am Intrested</Button>  */}
+        
+         
          <Button variant="danger" onClick={()=>{props.deleteProperty(props._id)}} >Delete</Button> 
       </Card.Body>
     </Card>

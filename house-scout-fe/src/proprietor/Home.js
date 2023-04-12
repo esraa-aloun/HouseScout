@@ -11,7 +11,7 @@ export default function Home() {
   
   return (
     <div>
-        
+{/*         
          <Carousel activeIndex={index} onSelect={handleSelect}>
          <Carousel.Item>
         <img
@@ -50,7 +50,7 @@ export default function Home() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
     </div>
   )
 }

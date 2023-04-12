@@ -29,7 +29,7 @@ exports.property_delete = (req,res)=>{
 
 exports.property_add_to_intrestedProperty_post = (req,res) =>{
     console.log(req.body)
-    let intProperty = new IntrestedProperty
+    let intProperty = new IntrestedProperty(req.body)
 
     intProperty.save()
     .then((intProperties) =>{

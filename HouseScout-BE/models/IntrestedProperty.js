@@ -11,10 +11,10 @@ const IntrestedPropertySchema = mongoose.Schema({
     },
     client_id:{
         type:String,
-    },
-    property_location:{
-        type:String,
     }
+    // property_location:{
+    //     type:String,
+    // }
 
 
 },

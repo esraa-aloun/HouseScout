@@ -57,9 +57,22 @@ export default function PropertyList(props) {
       })
       .catch((error) => {
         console.error(error);
-      });
+      });     
       
-      
+    }
+
+    const addToFavourite = (pid) => {
+      console.log('pid',pid)
+      const data ={property_id:pid, client_id:user.user.id}
+
+      Axios.post("property/addToFavourite", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });  
+
     }
     
        
@@ -101,7 +114,7 @@ export default function PropertyList(props) {
 
   const allPropertise = properties.map((property, index) => (
     <tr key={index}>
-     <Property {...property} addIntrestedProperty={addIntrestedProperty} />
+     <Property {...property} addIntrestedProperty={addIntrestedProperty} addToFavourite={addToFavourite}/>
     </tr>
 
   ))

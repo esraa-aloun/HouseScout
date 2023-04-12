@@ -26,7 +26,7 @@ export default function MyProperties() {
         setIsAuth(false)
       }
     }
-    //condition nul : ...
+   
     if(user.user){
     displayMyProperties(user.user.id)}
 

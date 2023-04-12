@@ -14,7 +14,7 @@ export default function Property(props) {
           {props.location}
         </Card.Text>
         <Button variant="primary" onClick={()=>{props.addIntrestedProperty(props._id,props.owner)}}>I am Intrested</Button>
-        <Button variant="primary">Add to Favourite</Button>
+        <Button variant="primary" onClick={()=>{props.addToFavourite(props._id)}}>Add to Favourite</Button>
       </Card.Body>
     </Card>
     </div>

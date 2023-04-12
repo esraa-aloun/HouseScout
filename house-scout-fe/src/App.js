@@ -29,6 +29,9 @@ export default function App() {
       let user = jwt_decode(token)
 
       if(user){
+        //inorder to get the userRole we need to specify it in the payload in the BE 
+        // console.log('tt',user.user.role)
+        // console.log('tt',user.user)
         setIsAuth(true)
         setUser(user)
       }
@@ -58,7 +61,7 @@ export default function App() {
         localStorage.setItem("token", token)
         let user = jwt_decode(token)
         setIsAuth(true)
-        setUser({...user, userRole:user.userRole})
+        setUser({...user})
         
       }
     })
@@ -76,6 +79,11 @@ export default function App() {
   }
 
 
+
+
+  //Clinet
+  //Proprietor
+
   return (
     <div>
        <Router>
@@ -88,13 +96,13 @@ export default function App() {
             <Nav.Link href="/signup">Signup</Nav.Link>
             <Nav.Link href="/signin">Signin</Nav.Link>
             <Nav.Link href="/logout" onClick={onLogoutHandler} >logout</Nav.Link>
-            <Nav.Link href="/myProperties" >My Properties</Nav.Link>
-            <Nav.Link href="/addProperty" >Add Propert</Nav.Link>
-            <Nav.Link href="/intrestedProperties" >Intrested Properties</Nav.Link>
-            <Nav.Link href="/houses" >Houses</Nav.Link>
-            <Nav.Link href="/apartments" >Apartments</Nav.Link>
-            <Nav.Link href="/studios" >Studios</Nav.Link>
-            <Nav.Link href="/favouriteList" >Favourite List</Nav.Link>
+            {isAuth && user.user.role === "Proprietor" && (<Nav.Link href="/myProperties" >My Properties</Nav.Link>)}
+            {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/addProperty" >Add Propert</Nav.Link>}
+            {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/intrestedProperties" >Intrested Properties</Nav.Link>}
+            {isAuth && user.user.role === "Client" && <Nav.Link href="/houses" >Houses</Nav.Link>}
+            {isAuth && user.user.role === "Client" && <Nav.Link href="/apartments" >Apartments</Nav.Link>}
+            {isAuth && user.user.role === "Client" && <Nav.Link href="/studios" >Studios</Nav.Link>}
+            {isAuth && user.user.role === "Client" && (<Nav.Link href="/favouriteList" >Favourite List</Nav.Link>)}
           </Nav>
         </Container>
       </Navbar>

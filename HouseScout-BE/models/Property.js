@@ -46,7 +46,11 @@ const propertySchema = mongoose.Schema({
     furnished: {
         type: String,
         require: true
-    } 
+    },
+    img:{
+        type: String,
+        
+    }
 
 },
 {

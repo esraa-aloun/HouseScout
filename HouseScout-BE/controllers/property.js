@@ -1,6 +1,32 @@
 const Property = require("../models/Property")
 
 
+
+
+
+exports.property_edit_get = (req, res) => {
+    Property.findById(req.query.id)
+    .then(property => {        
+        res.json({property})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+
+exports.property_update_put = (req, res) => {
+    console.log(req.body._id);
+    Author.findByIdAndUpdate(req.body._id, req.body, {new : true})
+    .then((property) => {
+        res.json({property})
+    })
+    .catch(err => {
+        console.log(err)
+    });
+}
+
+
 exports.property_myPropertise_get =(req,res) =>{
 
     Property.find({owner: req.query.id})

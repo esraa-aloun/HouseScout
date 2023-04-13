@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Axios from 'axios'
 import MyProperty from './MyProperty';
 import jwt_decode from 'jwt-decode'
+import PropertyEditForm from './PropertyEditForm';
 
 
 export default function MyProperties() {
@@ -9,6 +10,10 @@ export default function MyProperties() {
   const [myProperties, setMyProperties] = useState([]);
   const [user, setUser] = useState({})
   const [isAuth, setIsAuth] = useState(false)
+  const [currentProperty, setCurrentProperty] = useState("");
+  const [isEdit, setIsEdit]= useState(false);
+
+
 
   useEffect(() => {
 
@@ -61,10 +66,45 @@ const deleteProperty = (id) => {
       })
 }
 
+const editView = (id) =>{ 
+  Axios.get(`proprety/edit?id=${id}`)
+  .then(res => {
+      console.log(res.data.property)
+      let property = res.data.property
+      console.log('loaded property Information')
+      setIsEdit(true)
+      setCurrentProperty(property)
+  })
+  .catch(err =>
+      {
+          console.log('Error')
+          console.log(err)
+      })
+}
+
+const editProperty = (property) => {
+  Axios.put('proprety/update', property,
+  {
+      headers:{
+          "Authorization":"Bearer " + localStorage.getItem("token")  
+      }
+  })
+  .then(res =>{
+      console.log('property Updated Successfuly')
+      console.log(res)
+      // loadAuthorsList()
+  })
+  .catch(err =>
+      {
+          console.log('Error')
+          console.log(err)
+      })
+}
+
 const allPropertise = myProperties.map((property, index) => (
 <div key={index}>
  
- <MyProperty {...property} deleteProperty={deleteProperty}/>
+ <MyProperty {...property} deleteProperty={deleteProperty} editView={editView}/>
 </div>
 
 ))
@@ -72,6 +112,11 @@ const allPropertise = myProperties.map((property, index) => (
   return (
     <div className='grid'>
       {allPropertise}
+      {(!isEdit) ? 
+        ""
+        :
+        <PropertyEditForm key={currentProperty._id} property={currentProperty} editProperty={editProperty}/>
+        }
     </div>
   )
 }

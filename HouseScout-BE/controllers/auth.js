@@ -82,6 +82,8 @@ exports.auth_signin_post = async (req, res) => {
         id: user._id,
         name: user.firstName,
         role: user.userRole,
+        phone: user.phoneNumber,
+        name: user.firstName,
       },
     };
 

@@ -28,7 +28,8 @@ router.get("/property/myPropertise", propertyCntrl.property_myPropertise_get);
 router.post("/property/addToFavourite", favouriteListCntrl.property_add_to_favourite_post)
 router.get("/property/FavouriteList", favouriteListCntrl.property_favourite_list_get)
 
-// router.put("/proprty/update",isLoggedIn, propertyCntrl.property_update_put);
+router.put("/property/update", propertyCntrl.property_update_put);
+router.get("/proprety/edit", propertyCntrl.property_edit_get);
 
 router.delete("/property/delete", propertyCntrl.property_delete);
 

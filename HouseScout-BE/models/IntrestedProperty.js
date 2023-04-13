@@ -11,6 +11,16 @@ const IntrestedPropertySchema = mongoose.Schema({
     },
     client_id:{
         type:String,
+    },
+    client_name:{
+        type:String,
+        
+    },
+    client_phoneNumber:{
+        type:String,
+    },
+    pImg:{
+        type:String,
     }
     // property_location:{
     //     type:String,

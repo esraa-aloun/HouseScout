@@ -7,6 +7,7 @@ exports.property_add_to_favourite_post = (req,res) =>{
 
     FavouriteList.find({client_id: req.body.client_id})
     .then(client => {
+        console.log("client", client)
         console.log(client[0])
         if(client != null){
             console.log("Added to already existing record")
@@ -43,13 +44,14 @@ exports.property_add_to_favourite_post = (req,res) =>{
 
 exports.property_favourite_list_get = (req,res) =>{
 
+    // FavouriteList.findById(req.query.id).populate('property_id')
     FavouriteList.find({client_id: req.query.id}).populate('property_id')
     .then(favList => {
 
         // Property.findById(favList)
         console.log(favList)
-        console.log(favList[0].property_id)
-        res.json({favList:favList[0]})
+        // console.log(favList[0].property_id)
+        res.json({favList})
     })
     .catch(err => {
         console.log(err);

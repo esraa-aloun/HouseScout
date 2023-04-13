@@ -16,13 +16,14 @@ export default function FavProp(props) {
         <Card.Title>{props.price} BD</Card.Title>
         <Card.Text>
         {/* <FontAwesomeIcon icon="fa-solid fa-toilet" /> */}
+        Location: {props.location}<br/>
         Room: {props.room}<br/>
         Master: {props.master}<br/>        
         Bathroom: {props.bathRoom} <br/>
         Kitchen: {props.kitchen}<br/>
         Floor: {props.floor}<br/>
         {props.offerType}<br/>
-        {props.furnished}
+        {/* {props.furnished} */}
 
    
          

@@ -15,6 +15,7 @@ export default function MyProperty(props) {
         <Card.Title>{props.price} BD</Card.Title>
         <Card.Text>
         {/* <FontAwesomeIcon icon="fa-solid fa-toilet" /> */}
+        Location: {props.location}<br/>
         Room: {props.room}<br/>
         Master: {props.master}<br/>        
         Bathroom: {props.bathRoom} <br/>
@@ -28,7 +29,7 @@ export default function MyProperty(props) {
           {props.location} */}
         </Card.Text>
         
-        {/* <Button variant="dark" className='btn1' onClick={()=>{props.addIntrestedProperty(props._id,props.owner)}}>I am Intrested</Button> */}
+        <Button variant="dark" className='btn1' onClick={()=>{props.editView(props._id)}}style={{ width: '100%' }} >Edit</Button>
         <br/>
         <Button variant="danger" onClick={()=>{props.deleteProperty(props._id)}}style={{ width: '100%' }} >Delete</Button> 
       </Card.Body>

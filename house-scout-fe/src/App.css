@@ -72,6 +72,16 @@
   margin-bottom: 10px;
    /* width: 100%; */
 }
+.slider{
+  height: 500px;
+  /* border: 1px red solid; */
+}
+.nono{
+  margin: 20px;
+  margin-top: 40px;
+  font-family: 'Caveat', cursive;
+  text-align: center;
+}
 
 @keyframes App-logo-spin {
   from {

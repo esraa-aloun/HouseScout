@@ -48,13 +48,13 @@ export default function IntrestedProperties(props) {
     }
 
     const allPropertise = intProperties.map((intproperty, index) => (
-        <tr key={index}>
+        <div key={index}>
          <IntrestedProperty {...intproperty} />
-        </tr>))
+        </div>))
 
 
   return (
-    <div>
+    <div className='grid'>
         {allPropertise}
     </div>
   )

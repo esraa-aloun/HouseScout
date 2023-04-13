@@ -46,9 +46,10 @@ export default function FavList() {
   //favList
  }
 console.log(favList)
+console.log(favList[0])
 let allFav = []
 if(favList != ""){
- allFav = favList.property_id.map((property, index) => (
+ allFav = favList[0].property_id.map((property, index) => (
   <div key={index}>
    
    <FavProp {...property} />

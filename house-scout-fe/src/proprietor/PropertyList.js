@@ -48,10 +48,11 @@ export default function PropertyList(props) {
     }, [])
 
 
-    const addIntrestedProperty = (pid,ownerID) => {
+    const addIntrestedProperty = (pid,ownerID,pimg) => {
     console.log('here',pid, "client_id", user.user.id)
     //the name of the variable must be same as the var name in Model
-      const data = {property_id:pid, client_id:user.user.id, owner_id:ownerID}
+    
+    const data = {property_id:pid, client_id:user.user.id, owner_id:ownerID, client_name: user.user.name, client_phoneNumber:user.user.phone,pImg:pimg}
 
       Axios.post("property/addIntrestedProperty", data)
       .then((response) => {

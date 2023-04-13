@@ -38,20 +38,13 @@ const propertySchema = mongoose.Schema({
         type: Number,
         require: true,
     },
-    maidRoom: {
-        type: Number,
-        require: true,
-    },
-    // services: {
-    //     type: Array,
-    //     // require: true,
-    // },
+   
     offerType: {
         type: String,
         require: true,
     },
     furnished: {
-        type: Boolean,
+        type: String,
         require: true
     } 
 

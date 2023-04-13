@@ -62,15 +62,15 @@ const deleteProperty = (id) => {
 }
 
 const allPropertise = myProperties.map((property, index) => (
-<tr key={index}>
+<div key={index}>
  
  <MyProperty {...property} deleteProperty={deleteProperty}/>
-</tr>
+</div>
 
 ))
 
   return (
-    <div>MyProperties
+    <div className='grid'>
       {allPropertise}
     </div>
   )

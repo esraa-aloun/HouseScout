@@ -19,6 +19,7 @@ export default function IntrestedProperties(props) {
           if(user){
             setIsAuth(true)
             setUser(user)
+            displayIntrestedProperties(user.user.id)
            
           }
           else if (!user){
@@ -29,7 +30,7 @@ export default function IntrestedProperties(props) {
 
         
         // const id = user.user.id
-        displayIntrestedProperties(user.user.id)
+       
     
         }, [])
 
@@ -53,7 +54,7 @@ export default function IntrestedProperties(props) {
 
 
   return (
-    <div>IntrestedProperties
+    <div>
         {allPropertise}
     </div>
   )

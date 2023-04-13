@@ -3,6 +3,7 @@ import FavProp from './FavProp'
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
+
 export default function FavList() {
 
 
@@ -44,21 +45,23 @@ export default function FavList() {
  
   //favList
  }
-
- const allFav = favList.map((property, index) => (
-  <tr key={index}>
+console.log(favList)
+let allFav = []
+if(favList != ""){
+ allFav = favList.property_id.map((property, index) => (
+  <div key={index}>
    
    <FavProp {...property} />
-  </tr> ))
+  </div> ))
 
-
+ }
 
 
   return (
-    <div>
-       {/* <CardGroup> */}
-        {allFav}
-       {/* </CardGroup> */}
+    <div className='grid'>
+    
+          {allFav}        
+
     </div>
   )
 }

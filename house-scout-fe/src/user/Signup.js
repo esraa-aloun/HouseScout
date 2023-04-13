@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Container, Form, Button} from "react-bootstrap"
+import '../App.css'
 
 
 export default function Signup(props) {
@@ -21,8 +22,9 @@ export default function Signup(props) {
 
 
   return (
-    <div>
-        <h1>signup</h1>
+    <div className='signup'>
+        {/* <h1>signup</h1> */}
+        <br/>
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
@@ -58,9 +60,9 @@ export default function Signup(props) {
                 </Form.Control>
             </Form.Group>
 
-           
-            <Button variant='primary' onClick={registerHandler} style={{ marginTop: '20px' }}>Register</Button>
-
+            <div className='midbtn'>
+            <Button variant='info' onClick={registerHandler} size="lg"style={{ width: '100%' }}>Register</Button>
+            </div>
         </Container>
     </div>
   )

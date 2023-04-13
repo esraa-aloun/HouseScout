@@ -17,6 +17,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 
+
 export default function App() {
 
   
@@ -90,14 +91,14 @@ export default function App() {
           <div>
           <Navbar bg="dark" variant="dark">
           <Container>
-          <Navbar.Brand href="/">HomeScout</Navbar.Brand>
+          <Navbar.Brand href="/">HouseScout</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             {isAuth == false && <Nav.Link href="/signup">Signup</Nav.Link>}
             {isAuth == false && <Nav.Link href="/signin">Signin</Nav.Link>}
            
             {isAuth && user.user.role === "Proprietor" && (<Nav.Link href="/myProperties" >My Properties</Nav.Link>)}
-            {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/addProperty" >Add Propert</Nav.Link>}
+            {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/addProperty" >Add Property</Nav.Link>}
             {isAuth && user.user.role === "Proprietor" && <Nav.Link href="/intrestedProperties" >Intrested Properties</Nav.Link>}
             {isAuth && user.user.role === "Client" && <Nav.Link href="/houses" >Houses</Nav.Link>}
             {isAuth && user.user.role === "Client" && <Nav.Link href="/apartments" >Apartments</Nav.Link>}

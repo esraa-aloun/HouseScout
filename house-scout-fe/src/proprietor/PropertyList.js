@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react'
 import Axios from 'axios'
 import Property from './Property';
 import jwt_decode from 'jwt-decode'
+import '../App.css'
+
 
 export default function PropertyList(props) {
 
@@ -113,15 +115,15 @@ export default function PropertyList(props) {
     }
 
   const allPropertise = properties.map((property, index) => (
-    <tr key={index}>
+    <div key={index} >
      <Property {...property} addIntrestedProperty={addIntrestedProperty} addToFavourite={addToFavourite}/>
-    </tr>
+    </div>
 
   ))
 
 
   return (
-    <div>
+    <div className='grid'>
 
 
     {allPropertise}

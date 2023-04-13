@@ -21,8 +21,8 @@ export default function Signin(props) {
 
 
   return (
-    <div>
-        <h1>Sign in</h1>
+    <div className='signup'>
+        {/* <h1>Sign in</h1> */}
         <Container>
             <Form.Group>
                 <Form.Label>Email</Form.Label>
@@ -33,9 +33,9 @@ export default function Signin(props) {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password'name='password' onChange={changeHandler}/>                
             </Form.Group>
-
-            <Button variant='primary' onClick={loginHandler} style={{ marginTop: '20px' }}>login</Button>
-
+            <div className='midbtn'>
+            <Button variant='info' onClick={loginHandler} size="lg"style={{ width: '100%' }}>login</Button>
+            </div>
         </Container>
     </div>
   )

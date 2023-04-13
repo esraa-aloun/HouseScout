@@ -67,8 +67,9 @@ export default function PropertyCreateForm(props) {
     
 
   return (
-    <div>
-        <h1>PropertyCreateForm</h1>
+    <div className='signup'>
+        {/* <h1>PropertyCreateForm</h1> */}
+        <br/>
         <Container>
 
             
@@ -92,54 +93,43 @@ export default function PropertyCreateForm(props) {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Which Floor?</Form.Label>
+                <Form.Label>Floor</Form.Label>
                 <Form.Control name='floor' onChange={handleChange}/>                
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>How many room?</Form.Label>
+                <Form.Label>Room</Form.Label>
                 <Form.Control name='room' onChange={handleChange}/>                
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>How many master room?</Form.Label>
+                <Form.Label>Master Room</Form.Label>
                 <Form.Control name='master' onChange={handleChange}/>                
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>How many kitchen?</Form.Label>
+                <Form.Label>Kitchen</Form.Label>
                 <Form.Control name='kitchen' onChange={handleChange}/>                
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>How many bathRoom?</Form.Label>
+                <Form.Label>Bathroom</Form.Label>
                 <Form.Control name='bathRoom' onChange={handleChange}/>                
             </Form.Group>
 
-            <Form.Group>
-                <Form.Label>How many bathRoom?</Form.Label>
-                <Form.Control name='bathRoom' onChange={handleChange}/>                
-            </Form.Group>
+                    
 
             <Form.Group>
-                <Form.Label>How many maidRoom?</Form.Label>
-                <Form.Control name='maidRoom' onChange={handleChange}/>                
-            </Form.Group>
-
-            <Form.Group>
-                <Form.Label>How many bathRoom?</Form.Label>
-                <Form.Control name='bathRoom' onChange={handleChange}/>                
-            </Form.Group>
-
-            <Form.Group>
-                {/* <Form.Label>How many bedrooms?</Form.Label> */}
-                <div>
+                 <Form.Label>Offer</Form.Label> 
+                <div className='radiobtn'>
+                    <div className='space'>
                     <Form.Check type="radio" label="For sale" name="offerType"
-                    value="forSale"
+                    value="For Sale"
                     onChange={handleChange}
                     />
+                    </div>
                     <Form.Check type="radio" label="For Rent" name="offerType"
-                    value="forRent"
+                    value="For Rent"
                     onChange={handleChange}
                     />                
                 </div>
@@ -147,14 +137,16 @@ export default function PropertyCreateForm(props) {
 
             
             <Form.Group>
-                {/* <Form.Label>How many bedrooms?</Form.Label> */}
-                <div>
-                    <Form.Check type="radio" label="Furnished" name="furnished"
-                    value="true"
+                <Form.Label>Furnished</Form.Label>
+                <div className='radiobtn'>
+                    <div className='space'>
+                    <Form.Check type="radio" label="Yes" name="furnished"
+                    value="Furnished"
                     onChange={handleChange}
                     />
-                    <Form.Check type="radio" label="Unfurnished" name="furnished"
-                    value="false"
+                    </div>
+                    <Form.Check type="radio" label="No" name="furnished"
+                    value="Unfurnished"
                     onChange={handleChange}
                     />                
                 </div>
@@ -164,8 +156,9 @@ export default function PropertyCreateForm(props) {
             <Form.Control type="hidden" name="owner" value={ user.user ? user.user.id : null} />
             </Form.Group> */}
             <input type="hidden" name="owner" value={ user.user ? user.user.id : null}/>
-
-            <Button variant='primary' onClick={handleSubmit}>Add</Button> 
+            <div className='midbtn'>
+            <Button variant='info' onClick={handleSubmit} size="lg"style={{ width: '100%' }}>Add Property</Button> 
+            </div>
 
         </Container>
     </div>
